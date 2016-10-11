@@ -157,6 +157,8 @@ public class EmpleadosAdapter extends RecyclerView.Adapter<EmpleadosAdapter.Empl
 
     private class AsynClass extends AsyncTask<Void, Void, Void> {
 
+        //Este es un comentario
+
         List list = new ArrayList();
 
         private void makeGetRequest() {

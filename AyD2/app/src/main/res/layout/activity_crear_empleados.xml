@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:id="@+id/coordinator_crear"
     tools:context="com.example.eliabd.ayd2.CrearEmpleados">
 
     <android.support.design.widget.AppBarLayout

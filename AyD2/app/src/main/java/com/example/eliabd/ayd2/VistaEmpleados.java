@@ -71,7 +71,7 @@ public class VistaEmpleados extends AppCompatActivity {
         });
 
         FloatingActionButton fabCrear = (FloatingActionButton) findViewById(R.id.fab_crear);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fabCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -95,7 +95,7 @@ public class VistaEmpleados extends AppCompatActivity {
 
             //http://echo.jsontest.com/id/4/nombre/jhon/apellido/smith/dpi/123456/puesto/manager/salario/2.5
 
-            HttpGet request = new HttpGet("http://192.168.43.31:9000/getempleados");
+            HttpGet request = new HttpGet("http://192.168.43.18:9000/getempleados");
             // replace with your url
 
             HttpResponse response;

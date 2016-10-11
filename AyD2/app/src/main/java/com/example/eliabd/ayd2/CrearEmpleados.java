@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,7 @@ public class CrearEmpleados extends AppCompatActivity {
     EditText textDpi;
     EditText textPuesto;
     EditText textSalario;
+    CoordinatorLayout coordinator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,10 +46,12 @@ public class CrearEmpleados extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        coordinator = (CoordinatorLayout) findViewById(R.id.coordinator_crear);
+
         textNombre = (EditText) findViewById(R.id.text_nombre_crear);
         textApellido = (EditText) findViewById(R.id.text_apellido_crear);
         textDpi = (EditText) findViewById(R.id.text_dpi_crear);
-        textPuesto = (EditText) findViewById(R.id.text_dpi_crear);
+        textPuesto = (EditText) findViewById(R.id.text_puesto_crear);
         textSalario = (EditText)findViewById(R.id.text_salario_crear);
 
 
@@ -76,7 +80,7 @@ public class CrearEmpleados extends AppCompatActivity {
 
             HttpClient httpClient = new DefaultHttpClient();
             // replace with your url
-            HttpPost httpPost = new HttpPost("http://192.168.43.31:9000/editar/registro");
+            HttpPost httpPost = new HttpPost("http://192.168.43.18:9000/registro");
 
 
             //Post Data
@@ -114,6 +118,20 @@ public class CrearEmpleados extends AppCompatActivity {
                 // write response to log
                 String respuesta = EntityUtils.toString(response.getEntity());
                 Log.d("Http Post Response:", respuesta);
+
+                if(respuesta.equals("Usuario creado exitosamente")){
+
+                    Snackbar.make(coordinator, "Usuario creado Exitosamente", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+                }else{
+
+                    Snackbar.make(coordinator, "Ups! ocurrio un error", Snackbar.LENGTH_LONG)
+                            .setAction("Action", null).show();
+
+
+                }
+
             } catch (ClientProtocolException e) {
                 // Log exception
                 e.printStackTrace();

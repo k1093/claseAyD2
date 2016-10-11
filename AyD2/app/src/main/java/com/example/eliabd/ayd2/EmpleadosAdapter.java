@@ -164,7 +164,7 @@ public class EmpleadosAdapter extends RecyclerView.Adapter<EmpleadosAdapter.Empl
             HttpClient client = new DefaultHttpClient();
 
 
-            HttpGet request = new HttpGet("http://192.168.43.31:9000/eliminar/"+ dpiGeneral);
+            HttpGet request = new HttpGet("http://192.168.43.18:9000/eliminar/"+ dpiGeneral);
 
 
             HttpResponse response;

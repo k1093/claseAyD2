@@ -107,7 +107,7 @@ public class EditarEmpleados extends AppCompatActivity {
 
             HttpClient httpClient = new DefaultHttpClient();
             // replace with your url
-            HttpPost httpPost = new HttpPost("http://192.168.43.31:9000/editar/"+ dpi);
+            HttpPost httpPost = new HttpPost("http://192.168.43.18:9000/editar/"+ dpi);
 
 
             //Post Data
